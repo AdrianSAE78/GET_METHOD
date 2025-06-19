@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .post { border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .post h3 { color: #333; margin-top: 0; }
+        .post p { color: #666; }
+        .user-id { color: #888; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>Lista de Posts</h1>
+    
+    {% if posts %}
+        {% for post in posts %}
+        <div class="post">
+            <div class="user-id">Usuario: {{ post.userId }}</div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.body }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No hay posts disponibles.</p>
+    {% endif %}
+</body>
+</html>
